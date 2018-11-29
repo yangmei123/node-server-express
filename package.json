@@ -8,11 +8,18 @@
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
     "mysql": "^2.13.0",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "express-ws": "^4.0.0",
+    "karma": "^1.7.0",
+    "nodejs-websocket": "^1.7.1",
+    "socket.io": "^2.1.1"
   }
 }
