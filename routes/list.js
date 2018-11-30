@@ -10,9 +10,11 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 /* insert colect. */
 router.get('/', function(req, res, next) {
   var data = req.body;
-  if (res.statusCode >= 100 && res.statusCode < 400){        
-    res.status(res.statusCode).json({code: 20000, message: '成功', 
-      data: { items: [
+  var query = req.query;
+  if (res.statusCode >= 100 && res.statusCode < 400){
+  	var page1 = { 
+      	total: 11, 
+      	items: [
       	{
       	  author: 'name',
 		  display_time: '1984-10-14 11:14:19',
@@ -20,13 +22,6 @@ router.get('/', function(req, res, next) {
 		  pageviews: 4400,
 		  status: 'deleted',
 		  title: '标题1'
-		}, {
-      	  author: 'name',
-		  display_time: '1984-10-14 11:14:19',
-		  id: '13',
-		  pageviews: 4400,
-		  status: 'published',
-		  title: '标题13'
 		}, {
       	  author: 'name',
 		  display_time: '1984-10-14 11:14:19',
@@ -90,21 +85,22 @@ router.get('/', function(req, res, next) {
 		  pageviews: 4400,
 		  status: 'deleted',
 		  title: '标题10'
-		}, {
-      	  author: 'name',
-		  display_time: '1984-10-14 11:14:19',
-		  id: '11',
-		  pageviews: 4400,
-		  status: 'deleted',
-		  title: '标题11'
-		}, {
-      	  author: 'name',
-		  display_time: '1984-10-14 11:14:19',
-		  id: '12',
-		  pageviews: 4400,
-		  status: 'deleted',
-		  title: '标题12'
-		}, ] } 
+		}] };
+	var page2 = {
+		total: 11,
+		items: [
+		  {
+      	    author: 'name',
+		    display_time: '1984-10-14 11:14:19',
+		    id: '11',
+		    pageviews: 4400,
+		    status: 'deleted',
+		    title: '标题11'
+		  }
+		]
+	}        
+    res.status(res.statusCode).json({code: 20000, message: '成功', 
+      data: Number(query.page) === 1 ? page1 : page2
     });;
   } else {
     res.status(res.statusCode).json({code: 'fail', message:'[sql ERROR] - '});;
