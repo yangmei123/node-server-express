@@ -10,6 +10,20 @@
 * express
 * mysql
 
+## 路由接口名
+
+查看app.js文件，就可以看到现有配置的接口。
+
+```
+// app.js
+app.use('/', index);
+app.use('/add', add);
+app.use('/delete', deletePage);
+app.use('/vue-admin/user/login', loginPage);
+app.use('/vue-admin/user/info', infoPage);
+app.use('/vue-admin/table/list', listPage);
+```
+
 ## Build Setup
 
 ``` bash
@@ -17,5 +31,6 @@
 npm install
 
 # serve with hot reload at localhost:3000
+# localhost:3000/vue-admin/table/list
 npm start
 ```
