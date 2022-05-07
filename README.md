@@ -4,6 +4,8 @@
 
 > 使用node ,express ,mysql 构建后端服务
 
+> 注意在本机要安装对应的mysql数据库，可使用docker安装
+
 > 对应的vue前端地址 https://github.com/yangmei123/vue-vue-router
 
 * node
@@ -31,6 +33,7 @@ app.use('/vue-admin/table/list', listPage);
 npm install
 
 # serve with hot reload at localhost:3000
-# localhost:3000/vue-admin/table/list
+# 查看数据库数据： http://localhost:3000/vue-admin/collect/list
+# 查看默认：localhost:3000/vue-admin/table/list
 npm start
 ```

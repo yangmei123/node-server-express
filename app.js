@@ -12,6 +12,7 @@ var infoPage = require('./routes/info');
 var deletePage = require('./routes/delete');
 var loginPage = require('./routes/login');
 var listPage = require('./routes/list');
+var collectPage = require('./routes/meiList');
 var app = express();
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use('/delete', deletePage);
 app.use('/vue-admin/user/login', loginPage);
 app.use('/vue-admin/user/info', infoPage);
 app.use('/vue-admin/table/list', listPage);
+app.use('/vue-admin/collect/list', collectPage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
