@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var mysql = require('mysql');
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // support json encoded bodies

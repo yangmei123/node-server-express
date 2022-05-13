@@ -4,7 +4,9 @@ var app = express();
 var mysql = require('mysql2');
 var bodyParser = require('body-parser');
 var connection = mysql.createConnection({
-  host: 'localhost',
+  //host: 'localhost',  // 外部链接docker内mysql使用
+  // host: 'mysql', // docker-compose使用
+  host: '172.17.0.1', // docker使用
   user: 'root',
   password: 'root',
   port: '3306',
@@ -17,10 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 /* insert colect. */
 router.post('/', function(req, res, next) {
 
-  // connection.connect(function (err){
-  //   if (err) throw err;
-  //   console.log('数据库连接成功');
-  // });
   // 设置允许跨域
   res.setHeader('Access-Control-Allow-Origin', '*');
   var data = req.body;

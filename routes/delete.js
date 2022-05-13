@@ -4,7 +4,9 @@ var app = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var connection = mysql.createConnection({
-  host: 'localhost',
+  //host: 'localhost',  // 外部链接docker内mysql使用
+  // host: 'mysql', // docker-compose使用
+  host: '172.17.0.1', // docker使用
   user: 'root',
   password: 'root',
   port: '3306',
